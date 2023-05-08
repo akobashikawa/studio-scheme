@@ -1,0 +1,14 @@
+#lang racket
+(define atom?
+  (lambda (x)
+    (and (not (pair? x)) (not (null? x)))))
+
+(atom? (quote atom))
+(atom? (quote turkey))
+(atom? 1492)
+(atom? (quote u))
+(atom? (quote *abc$))
+
+(define list?
+  (lambda (x)
+    (atom? (quote x))))
